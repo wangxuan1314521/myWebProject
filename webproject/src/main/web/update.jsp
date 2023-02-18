@@ -4,17 +4,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>数据回显</title>
+    <title>数据回显+修改品牌</title>
 </head>
 <body>
-<h3>添加品牌</h3>
-<form action="/webproject/addServlet" method="post">
+<h3>修改品牌</h3>
+<form action="/webproject/updateServlet" method="post">
+    <%--隐藏域--%>
+    <input type="hidden" value="${brand.id}">
     品牌名称：<input name="brandName" value="${brand.brandNme}"><br>
     企业名称：<input name="companyName" value="${brand.companyName}"><br>
     排序：<input name="ordered" value="${brand.ordered}"><br>
     描述信息：<textarea rows="5" cols="20" name="description" >${brand.description}</textarea><br>
     状态：
-
     <c:if test="${brand.status==0}">
         <input type="radio" name="status" value="0" checked>禁用
         <input type="radio" name="status" value="1" >启用<br>

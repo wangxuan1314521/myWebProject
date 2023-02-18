@@ -6,6 +6,7 @@ import com.itheima.util.SqlSessionFactoryUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import java.text.Bidi;
 import java.util.List;
 
 /**
@@ -68,4 +69,21 @@ public class BrandService {
         return brand;
 
     }
+
+    /**
+     * 修改功能
+     * @param brand
+     */
+    public void update(Brand brand) {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        //获取BrandMapper
+        BrandMapper mapper = sqlSession.getMapper(BrandMapper.class);
+        //调用方法
+        mapper.update(brand);
+        //提交事务
+        sqlSession.commit();
+        //释放资源
+        sqlSession.close();
+    }
+
 }
