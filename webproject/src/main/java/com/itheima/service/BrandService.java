@@ -49,4 +49,23 @@ public class BrandService {
         //释放资源
         sqlSession.close();
     }
+
+
+
+    /**
+     * 根据id查询Brand品牌信息
+     */
+    public Brand selectById( int id) {
+
+
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        BrandMapper mapper = sqlSession.getMapper(BrandMapper.class);
+
+        Brand brand = mapper.selectById(id);
+        sqlSession.close();
+
+        return brand;
+
+    }
 }

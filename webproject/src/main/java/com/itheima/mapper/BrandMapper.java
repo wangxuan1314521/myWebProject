@@ -29,5 +29,14 @@ public interface BrandMapper {
             "#{ordered},#{description},#{status})")
     void add(Brand brand);
 
+    /**
+     * 根据id查询
+     * @param id
+     * @return
+     */
+    @Select("select * from tb_briand where id=#{id}")
+    @ResultMap("brandResultMap")
+
+    Brand selectById(int id);
 
 }

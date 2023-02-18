@@ -39,7 +39,7 @@
         <c:if test="${brand .status!=1}">
             <td>禁用</td>
         </c:if>
-            <td><a href="#">修改</a>   <a href="#">删除</a></td>
+            <td><a href="/webproject/selectByIdServlet?id=${brand.id}">修改</a>   <a href="#">删除</a></td>
 
 
         </tr>
