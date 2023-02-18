@@ -7,7 +7,11 @@
     <title>品牌查询</title>
 </head>
 <body>
-<table border="1" cellspacting="0" width="800">
+
+
+<input type="button" value="新增" id="add">
+<hr>
+<table border="1" cellspacting="0" width="80%">
     <tr>
         <th>序号</th>
         <th>品牌名称</th>
@@ -43,7 +47,14 @@
 
 
 </table>
+<script>
+    document.getElementById(add).onclick=function(){
 
+
+        location.href="/webproject/addBrand.jsp";
+    }
+
+</script>
 
 </body>
 </html>

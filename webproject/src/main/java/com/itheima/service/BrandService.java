@@ -16,9 +16,9 @@ public class BrandService {
     //提到成员位置
     SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
 
-/**
- * 查询所有
- * */
+    /**
+     * 查询所有
+     */
     public List<Brand> selectAll() {
 
 
@@ -32,5 +32,21 @@ public class BrandService {
 
         return brands;
 
+    }
+
+    /**
+     * 添加功能
+     * @param brand
+     */
+    public void add(Brand brand) {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        //获取BrandMapper
+        BrandMapper mapper = sqlSession.getMapper(BrandMapper.class);
+        //调用方法
+        mapper.add(brand);
+        //提交事务
+        sqlSession.commit();
+        //释放资源
+        sqlSession.close();
     }
 }
